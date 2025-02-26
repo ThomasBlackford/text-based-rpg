@@ -4,6 +4,7 @@ class Player
 {
     public string Name { get; private set; }
     public int MaxHealth { get; private set; }
+    public int GoldBalance { get; private set; }
     public int CurrentHealth { get; private set; }
     public int AC { get; private set; }
 
@@ -30,6 +31,7 @@ class Player
     
     public void createPlayer()
     {
+        int GoldBalance = 0;
         Console.WriteLine("Welcome to the character creator!");
         Console.WriteLine("Please enter your name: ");
         String playerName = Console.ReadLine();

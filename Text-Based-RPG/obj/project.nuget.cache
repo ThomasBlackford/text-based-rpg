@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "9T98IcQ9VCQ=",
+  "dgSpecHash": "yO/xSJHqTx0=",
   "success": true,
-  "projectFilePath": "/home/thomasblackford/RiderProjects/Text-Based-RPG/Text-Based-RPG/Text-Based-RPG.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\ITCS 3112\\text-based-rpg\\Text-Based-RPG\\Text-Based-RPG.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alena\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.12\\microsoft.netcore.app.ref.8.0.12.nupkg.sha512",
+    "C:\\Users\\alena\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.12\\microsoft.windowsdesktop.app.ref.8.0.12.nupkg.sha512",
+    "C:\\Users\\alena\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.12\\microsoft.aspnetcore.app.ref.8.0.12.nupkg.sha512",
+    "C:\\Users\\alena\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.12\\microsoft.netcore.app.host.win-x64.8.0.12.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,5 +1,4 @@
-
-
+using System;
 class Player
 {
     public string Name { get; private set; }
@@ -33,14 +32,24 @@ class Player
     {
         int GoldBalance = 0;
         Console.WriteLine("Welcome to the character creator!");
-        Console.WriteLine("Please enter your name: ");
-        String playerName = Console.ReadLine();
-        Console.WriteLine("Your name is " + playerName + "?");
-        Console.WriteLine("Y/N");
-        String choice = Console.ReadLine();
-        if (choice == "N")
+        
+        bool nameConfirmed = false;
+        while (!nameConfirmed)
         {
-            
+            Console.WriteLine("Please enter your name: ");
+            String playerName = Console.ReadLine();
+            Console.WriteLine("Your name is " + playerName + "?");
+            Console.WriteLine("Y/N");
+            String choice = Console.ReadLine().ToUpper();
+            if (choice == "Y")
+            {
+                this.Name = playerName;
+                nameConfirmed = true;
+            }
+            else if (choice == "N")
+            {
+                Console.WriteLine("Let's try again.");
+            }
         }
     }
     

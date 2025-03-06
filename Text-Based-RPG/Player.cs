@@ -6,6 +6,8 @@ class Player
     public int GoldBalance { get; private set; }
     public int CurrentHealth { get; private set; }
     public int AC { get; private set; }
+    public int Strength { get; private set; }
+    public int Level { get; private set; }
 
     public void takeDamage(int damage, string type)
     {
@@ -51,6 +53,10 @@ class Player
                 Console.WriteLine("Let's try again.");
             }
         }
+
+        // Initialize Strength and Level
+        this.Strength = 10; // Default strength value
+        this.Level = 1; // Default level value
     }
     
 }

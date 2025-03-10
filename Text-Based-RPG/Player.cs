@@ -6,7 +6,7 @@ class Player
     public string Name { get; private set; }
     public string Class { get; private set; }
     public int MaxHealth { get; private set; }
-    public int GoldBalance { get; private set; }
+    public int GoldBalance { get; set; }
     public int CurrentHealth { get; private set; }
     public int AC { get; private set; }
     public int Strength { get; private set; }

@@ -3,11 +3,26 @@ class Player
 {
     public string Name { get; private set; }
     public int MaxHealth { get; private set; }
-    public int GoldBalance { get; private set; }
+    public int GoldBalance { get; set; }
     public int CurrentHealth { get; private set; }
     public int AC { get; private set; }
     public int Strength { get; private set; }
     public int Level { get; private set; }
+    
+    public void AddGold(int amount)
+    {
+        GoldBalance += amount;
+    }
+
+    public bool SpendGold(int amount)
+    {
+        if (GoldBalance >= amount)
+        {
+            GoldBalance -= amount;
+            return true;
+        }
+        return false;
+    }
 
     public void takeDamage(int damage, string type)
     {

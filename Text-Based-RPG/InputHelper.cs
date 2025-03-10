@@ -1,5 +1,7 @@
 namespace Text_Based_RPG;
-
+/*
+ * Made by thomas blackford
+ */
 public static class inputHelper
 {
     public static string ReadYesNo(string prompt)

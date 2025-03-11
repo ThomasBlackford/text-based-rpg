@@ -1,0 +1,5 @@
+c:\Users\lucas\Documents\GitHub\text-based-rpg\Text-Based-RPG\obj\Debug\net8.0\Text-Based-RPG.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\lucas\Documents\GitHub\text-based-rpg\Text-Based-RPG\obj\Debug\net8.0\Text-Based-RPG.AssemblyInfoInputs.cache
+c:\Users\lucas\Documents\GitHub\text-based-rpg\Text-Based-RPG\obj\Debug\net8.0\Text-Based-RPG.AssemblyInfo.cs
+c:\Users\lucas\Documents\GitHub\text-based-rpg\Text-Based-RPG\obj\Debug\net8.0\Text-Based-RPG.csproj.CoreCompileInputs.cache
+c:\Users\lucas\Documents\GitHub\text-based-rpg\Text-Based-RPG\obj\Debug\net8.0\Text-Based-RPG.sourcelink.json

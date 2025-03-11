@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucas\\Documents\\GitHub\\text-based-rpg\\Text-Based-RPG\\Text-Based-RPG.csproj": {}
+    "c:\\Users\\lucas\\Documents\\GitHub\\text-based-rpg\\Text-Based-RPG\\Text-Based-RPG.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lucas\\Documents\\GitHub\\text-based-rpg\\Text-Based-RPG\\Text-Based-RPG.csproj": {
+    "c:\\Users\\lucas\\Documents\\GitHub\\text-based-rpg\\Text-Based-RPG\\Text-Based-RPG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucas\\Documents\\GitHub\\text-based-rpg\\Text-Based-RPG\\Text-Based-RPG.csproj",
+        "projectUniqueName": "c:\\Users\\lucas\\Documents\\GitHub\\text-based-rpg\\Text-Based-RPG\\Text-Based-RPG.csproj",
         "projectName": "Text-Based-RPG",
-        "projectPath": "C:\\Users\\lucas\\Documents\\GitHub\\text-based-rpg\\Text-Based-RPG\\Text-Based-RPG.csproj",
+        "projectPath": "c:\\Users\\lucas\\Documents\\GitHub\\text-based-rpg\\Text-Based-RPG\\Text-Based-RPG.csproj",
         "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucas\\Documents\\GitHub\\text-based-rpg\\Text-Based-RPG\\obj\\",
+        "outputPath": "c:\\Users\\lucas\\Documents\\GitHub\\text-based-rpg\\Text-Based-RPG\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config"

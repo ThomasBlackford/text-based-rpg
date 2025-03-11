@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "29GEweGkusY=",
+  "dgSpecHash": "u77X9BsqKTg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucas\\Documents\\GitHub\\text-based-rpg\\Text-Based-RPG\\Text-Based-RPG.csproj",
+  "projectFilePath": "c:\\Users\\lucas\\Documents\\GitHub\\text-based-rpg\\Text-Based-RPG\\Text-Based-RPG.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.12\\microsoft.netcore.app.ref.8.0.12.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.12\\microsoft.windowsdesktop.app.ref.8.0.12.nupkg.sha512",

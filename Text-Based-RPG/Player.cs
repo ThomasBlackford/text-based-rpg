@@ -225,7 +225,7 @@ namespace Text_Based_RPG
         Console.WriteLine($"Dodge Chance: {this.dodgeChance}");
         Console.WriteLine($"Crit Chance: {this.critChance}");
         Console.WriteLine($"Crit Multiplier: {this.critMultiplier}");
-    }
+    } //test
 
 }
 }

@@ -23,5 +23,5 @@ public class Item
         Weight = weight;
         Type = itemType;
         Equipped = equipped;
-    }
+    } //test
 }

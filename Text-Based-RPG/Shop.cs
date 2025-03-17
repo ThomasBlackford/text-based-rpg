@@ -49,7 +49,7 @@ public class Shop
         {
             Console.WriteLine($"{i + 1}. {inventory[i].Name} - {inventory[i].Price} Gold - {inventory[i].Description}");
         }
-    }
+    } //test
 
     private void BuyItem(Player player) //handles purhcases
     {

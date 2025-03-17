@@ -8,7 +8,7 @@ public class InventoryHandler
 {
     private List<Item> inventory;
 
-    public void DisplayInventory()
+    public void DisplayInventory() //test
     {
         for (int i = 0; i < this.inventory.Count; i++)
         {

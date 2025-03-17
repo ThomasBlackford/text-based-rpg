@@ -18,7 +18,7 @@ public static class inputHelper
                 Console.WriteLine("Invalid input. Please enter Y/N.");
             }
         }
-        return input;
+        return input; //test
     }
 
     public static int ReadInt(string prompt)

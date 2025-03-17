@@ -1,4 +1,5 @@
 # text-based-rpg
-# text-based-rpg
-# text-based-rpg
-# text-based-rpg
+Branches Created:
+* Main
+* LucasBranch
+* AlenaBranch

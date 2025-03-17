@@ -1,5 +1,9 @@
 using System;
-class Player
+using Text_Based_RPG;
+
+namespace Text_Based_RPG
+{
+    class Player
 {
     // Player properties (name, max health, gold balance, current health, armor class, strength, level)
     // adding more baseline stats moore in line with the 4 base classes, add more as we expand our classes later on.
@@ -17,6 +21,15 @@ class Player
     public int dodgeChance { get; private set; }
     public int critChance { get; private set; }
     public double critMultiplier { get; private set; }
+    
+    // equipment section
+
+    public Item headSlot { get; private set; }
+    public Item bodySlot { get; set; }
+    public Item LegsSlot { get; private set; }
+    public Item HandsSlot { get; private set; }
+    public Item accesorySlot1 { get; private set; }
+    public Item accesorySlot2 { get; private set; }
 
     // added more stats to the player class, will need to add more as we expand our classes later on.
     public void takeDamage(int damage, string type)
@@ -155,6 +168,45 @@ class Player
         this.CurrentHealth = this.MaxHealth;
         Console.WriteLine("Character creation complete!");
     }
+    public Player(
+        string name = "Unknown", 
+        string playerClass = "Depraived", 
+        int strength = 10, 
+        int intelligence = 10, 
+        int dexterity = 10, 
+        int constitution = 10, 
+        int maxHealth = 10, 
+        int ac = 10, 
+        int dodgeChance = 0, 
+        int critChance = 0, 
+        double critMultiplier = 1.5, 
+        int goldBalance = 10, 
+        int level = 1)
+    {
+        // Initialize properties
+        this.Name = name;
+        this.Class = playerClass;
+        this.Strength = strength;
+        this.Intelligence = intelligence;
+        this.Dexterity = dexterity;
+        this.Constitution = constitution;
+        this.MaxHealth = maxHealth;
+        this.AC = ac;
+        this.CurrentHealth = maxHealth; // Set current health to max health initially
+        this.GoldBalance = goldBalance;
+        this.Level = level;
+        this.dodgeChance = dodgeChance;
+        this.critChance = critChance;
+        this.critMultiplier = critMultiplier;
+
+        // Equipment slots are set to null initially
+        this.headSlot = null;
+        this.bodySlot = null;
+        this.LegsSlot = null;
+        this.HandsSlot = null;
+        this.accesorySlot1 = null;
+        this.accesorySlot2 = null;
+    }
 
     public void DisplayStats() //subject to change, but something to display all the stats/info to the player.
     {
@@ -175,4 +227,5 @@ class Player
         Console.WriteLine($"Crit Multiplier: {this.critMultiplier}");
     }
 
+}
 }

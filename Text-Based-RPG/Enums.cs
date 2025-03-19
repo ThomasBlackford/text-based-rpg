@@ -1,5 +1,3 @@
-using System;
-
 public static class Enums
 {
     // Enum for Character Classes (added notes for how I think the classes should be)
@@ -21,7 +19,6 @@ public static class Enums
         RockDwarf,
         Orc
     }
-
     // Enum for Damage Types (used in combat for resistance and damage calculation)
     public enum DamageType
     {
@@ -32,13 +29,3 @@ public static class Enums
         Ice,
         Poison
     }
-
-    public enum ItemType
-    {
-        Weapon,
-        Armor,
-        Consumable,
-        Misc,
-        Quest
-    }
-}

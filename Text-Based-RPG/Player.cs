@@ -26,9 +26,7 @@ class Player
         
         //get players current buffs/debuffs as well and apply in variable
         //need to come up with equation, 
-
         int resistPercent = 0;
-
         int totalDamage = damage - ((AC + resistPercent) * 10); 
         
         CurrentHealth -= totalDamage;
@@ -39,7 +37,7 @@ class Player
      * Class system, maybe the 9 dnd classes? Not sure how I will handle it (4 for now until we get a good foundation)
      * Races with bonuses? (yes)
      */
-    
+
     public void createPlayer()
     {
         int GoldBalance = 0;
@@ -174,5 +172,5 @@ class Player
         Console.WriteLine($"Crit Chance: {this.critChance}");
         Console.WriteLine($"Crit Multiplier: {this.critMultiplier}");
     }
-    
+
 }

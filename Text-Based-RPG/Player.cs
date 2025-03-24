@@ -22,7 +22,35 @@ public class Player
     public Inventory Inventory { get; private set; } = new Inventory();
     public List<Perk> Perks { get; private set; } = new List<Perk>();
 
-    public void TakeDamage(int damage) => CurrentHealth -= Math.Max(0, damage - AC);
+    public void TakeDamage(int damage)
+    {
+        Random rand = new Random();
+        
+        if (rand.Next(100) < DodgeChance)
+        {
+            Console.WriteLine($"{Name} dodged the attack!");
+            return;
+        }
+        
+        int finalDamage = Math.Max(1, damage - AC);
+        
+        CurrentHealth -= finalDamage;
+
+        Console.WriteLine($"{Name} took {finalDamage} damage! Current health: {CurrentHealth}/{MaxHealth}");
+        
+        if (CurrentHealth <= 0)
+        {
+            Console.WriteLine($"{Name} has died!");
+            CurrentHealth = 0;
+        }
+    }
+    
+    public void DisplayHealth()
+    {
+        Console.WriteLine($"{Name}'s Health: {CurrentHealth}/{MaxHealth}");
+    }
+
+
 
     public void Heal(int amount) => CurrentHealth = Math.Min(MaxHealth, CurrentHealth + amount);
 

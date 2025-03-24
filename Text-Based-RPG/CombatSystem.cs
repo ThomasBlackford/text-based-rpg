@@ -18,6 +18,7 @@ public class CombatSystem
         {
             Console.WriteLine("You missed!");
         }
+        player.DisplayHealth();
     }
 
     public static void EnemyTurn(Player player, Enemy enemy)

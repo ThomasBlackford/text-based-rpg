@@ -24,6 +24,7 @@ public static class GameWorld
         Console.WriteLine("2. Rest at Inn");
         Console.WriteLine("3. Go to the Forest");
         Console.WriteLine("4. Exit Town");
+        Console.WriteLine("5. Check stats");
         string choice = Console.ReadLine();
 
         switch (choice)
@@ -40,6 +41,10 @@ public static class GameWorld
                 break;
             case "4":
                 Console.WriteLine("You leave the town.");
+                break;
+            case "5":
+                Console.WriteLine("Your stats:");
+                player.DisplayStats();
                 break;
             default:
                 Console.WriteLine("Invalid choice.");

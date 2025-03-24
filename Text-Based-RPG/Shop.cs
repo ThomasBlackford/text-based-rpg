@@ -1,14 +1,12 @@
-namespace Text_Based_RPG; 
-/*
- * File made by Thomas Blackford
- */
+namespace Text_Based_RPG;
+using Text_Based_RPG;
 public class Shop
 {
-     private List<Item> inventory;
+    private List<Item> Inventory { get; set; }
 
     public Shop(List<Item> initialInventory)
     {
-        inventory = initialInventory;
+        Inventory = initialInventory;
     }
 
     public void OpenShop(Player player)
@@ -19,50 +17,49 @@ public class Shop
             Console.WriteLine("\nWelcome to the Shop! What would you like to do?");
             Console.WriteLine("1. Buy Items");
             Console.WriteLine("2. Sell Items");
-            Console.WriteLine("3. Exit");
+            Console.WriteLine("3. View Inventory");
+            Console.WriteLine("4. Exit");
             string choice = Console.ReadLine();
 
             switch (choice)
             {
                 case "1":
-                    DisplayItems();
-                    BuyItem(player);
+                    BuyItems(player);
                     break;
                 case "2":
-                    SellItem(player);
+                    SellItems(player);
                     break;
                 case "3":
+                    player.Inventory.DisplayInventory();
+                    break;
+                case "4":
                     shopping = false;
                     Console.WriteLine("Thank you for visiting the shop!");
                     break;
                 default:
-                    Console.WriteLine("Invalid choice. Please select 1, 2, or 3.");
+                    Console.WriteLine("Invalid choice.");
                     break;
             }
         }
     }
 
-    private void DisplayItems() //displays all items for sale by specific merchant
+    private void BuyItems(Player player)
     {
         Console.WriteLine("\nItems for Sale:");
-        for (int i = 0; i < inventory.Count; i++)
+        for (int i = 0; i < Inventory.Count; i++)
         {
-            Console.WriteLine($"{i + 1}. {inventory[i].Name} - {inventory[i].Price} Gold - {inventory[i].Description}");
+            Console.WriteLine($"{i + 1}. {Inventory[i].Name} - {Inventory[i].Price} Gold - {Inventory[i].Description}");
         }
-    }
 
-    private void BuyItem(Player player) //handles purhcases
-    {
-        int choice = inputHelper.ReadInt("Enter the number of the item to buy (0 to cancel):") - 1;
-        
-        if (choice >= 0 && choice < inventory.Count)
+        int choice = InputHelper.ReadInt("Enter the number of the item to buy (0 to cancel):") - 1;
+        if (choice >= 0 && choice < Inventory.Count)
         {
-            Item itemToBuy = inventory[choice];
-            if (player.GoldBalance >= itemToBuy.Price)
+            Item item = Inventory[choice];
+            if (player.GoldBalance >= item.Price)
             {
-                player.GoldBalance -= itemToBuy.Price;
-                Console.WriteLine($"You bought {itemToBuy.Name} for {itemToBuy.Price} gold.");
-                // add items to inventory here later, when its more developed
+                player.GoldBalance -= item.Price;
+                player.Inventory.AddItem(item);
+                Console.WriteLine($"You bought {item.Name} for {item.Price} gold.");
             }
             else
             {
@@ -75,8 +72,20 @@ public class Shop
         }
     }
 
-    private void SellItem(Player player)  //havent implemented this yet
+    private void SellItems(Player player)
     {
-        Console.WriteLine("\nXd");
+        player.Inventory.DisplayInventory();
+        int choice = InputHelper.ReadInt("Enter the number of the item to sell (0 to cancel):") - 1;
+        if (choice >= 0 && choice < player.Inventory.Items.Count)
+        {
+            Item item = player.Inventory.Items[choice];
+            player.GoldBalance += item.Price / 2; // Sell for half price
+            player.Inventory.RemoveItem(item);
+            Console.WriteLine($"You sold {item.Name} for {item.Price / 2} gold.");
+        }
+        else if (choice != -1)
+        {
+            Console.WriteLine("Invalid selection.");
+        }
     }
 }

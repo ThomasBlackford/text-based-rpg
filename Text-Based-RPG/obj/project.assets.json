@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\PIMOSH Website\\text-based-rpg\\Text-Based-RPG\\Text-Based-RPG.csproj",
+      "projectUniqueName": "C:\\ITCS 3112\\text-based-rpg\\Text-Based-RPG\\Text-Based-RPG.csproj",
       "projectName": "Text-Based-RPG",
-      "projectPath": "C:\\PIMOSH Website\\text-based-rpg\\Text-Based-RPG\\Text-Based-RPG.csproj",
+      "projectPath": "C:\\ITCS 3112\\text-based-rpg\\Text-Based-RPG\\Text-Based-RPG.csproj",
       "packagesPath": "C:\\Users\\alena\\.nuget\\packages\\",
-      "outputPath": "C:\\PIMOSH Website\\text-based-rpg\\Text-Based-RPG\\obj\\",
+      "outputPath": "C:\\ITCS 3112\\text-based-rpg\\Text-Based-RPG\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alena\\AppData\\Roaming\\NuGet\\NuGet.Config"

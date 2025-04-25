@@ -10,45 +10,55 @@ public static class GameWorld
         new Enemy("Orc", 30, 10, 15, 20, 30)
     };
 
-    public static Shop TownShop { get; private set; } = new Shop(new List<Item>
+    private static Shop riverdaleShop = new Shop(new List<Item>
     {
-        new Item("Sword", 50, "A sharp blade.", Enums.ItemType.Weapon, 5),
-        new Item("Potion", 10, "Restores 5 HP.", Enums.ItemType.Consumable, 5),
-        new Item("Leather Armor", 30, "Basic armor.", Enums.ItemType.Armor, 3)
+        new Item("Short Sword", 50, "Basic sword", Enums.ItemType.Weapon, 3),
+        new Item("Health Potion", 10, "Heals 5 HP", Enums.ItemType.Consumable, 5)
     });
 
-    public static void VisitTown(Player player)
+    private static Shop mountainviewShop = new Shop(new List<Item>
     {
-        Console.WriteLine("\nYou are in the town. What would you like to do?");
-        Console.WriteLine("1. Visit Shop");
-        Console.WriteLine("2. Rest at Inn");
-        Console.WriteLine("3. Go to the Forest");
-        Console.WriteLine("4. Exit Town");
-        Console.WriteLine("5. Check stats");
-        string choice = Console.ReadLine();
+        new Item("Long Sword", 75, "Better sword", Enums.ItemType.Weapon, 5),
+        new Item("Leather Armor", 50, "Basic armor", Enums.ItemType.Armor, 3)
+    });
 
-        switch (choice)
+    public static void VisitTown(Player player, string townName)
+    {
+        bool inTown = true;
+        while (inTown)
         {
-            case "1":
-                TownShop.OpenShop(player);
-                break;
-            case "2":
-                player.Heal(player.MaxHealth);
-                Console.WriteLine("You rested and restored your health.");
-                break;
-            case "3":
-                ExploreForest(player);
-                break;
-            case "4":
-                Console.WriteLine("You leave the town.");
-                break;
-            case "5":
-                Console.WriteLine("Your stats:");
-                player.DisplayStats();
-                break;
-            default:
-                Console.WriteLine("Invalid choice.");
-                break;
+            Console.Clear();
+            Console.WriteLine($"\nWelcome to {townName}!");
+            Console.WriteLine("1. Visit Shop");
+            Console.WriteLine("2. Rest at Inn (Full Heal)");
+            if (townName == "Mountainview") Console.WriteLine("3. Take Bandit Cave Quest");
+            Console.WriteLine("4. Leave Town");
+
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    if (townName == "Riverdale") riverdaleShop.OpenShop(player);
+                    else mountainviewShop.OpenShop(player);
+                    break;
+                case "2":
+                    player.Heal(player.MaxHealth);
+                    Console.WriteLine("You rested and recovered all health!");
+                    Console.ReadKey();
+                    break;
+                case "3" when townName == "Mountainview":
+                    Console.WriteLine("Quest: Clear the Bandit Cave!");
+                    Console.WriteLine("Reward: 100 gold and 50 XP");
+                    Console.ReadKey();
+                    break;
+                case "4":
+                    inTown = false;
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    Console.ReadKey();
+                    break;
+            }
         }
     }
 
@@ -87,4 +97,32 @@ public static class GameWorld
             player.AddXP(enemy.XPReward);
         }
     }
+    
+     public static void ExploreCave(Player player)
+        {
+            Console.WriteLine("\nYou enter the dark cave...");
+            var bandits = new List<Enemy>
+            {
+                new Enemy("Bandit", 25, 8, 12, 15, 30),
+                new Enemy("Bandit Leader", 40, 12, 15, 50, 75)
+            };
+    
+            foreach (var enemy in bandits)
+            {
+                Console.WriteLine($"A {enemy.Name} attacks!");
+                while (enemy.IsAlive() && player.CurrentHealth > 0)
+                {
+                    // Combat logic to be here
+                }
+                
+                if (player.CurrentHealth <= 0) return;
+            }
+    
+            Console.WriteLine("You cleared the cave of bandits!");
+            player.GoldBalance += 100;
+            player.AddXP(50);
+            Console.ReadKey();
+        }
+
+    
 }

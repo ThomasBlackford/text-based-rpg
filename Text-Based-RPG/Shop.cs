@@ -1,5 +1,8 @@
 namespace Text_Based_RPG;
 using Text_Based_RPG;
+/*
+ * made by tom, shop interface system
+ */
 public class Shop
 {
     private List<Item> Inventory { get; set; }

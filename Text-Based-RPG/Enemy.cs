@@ -1,6 +1,6 @@
 ﻿namespace Text_Based_RPG;
 using Text_Based_RPG;
-public class Enemy
+public class Enemy : IAttacker, IDefender
 {
     public string Name { get; set; }
     public int Health { get; set; }
@@ -9,6 +9,9 @@ public class Enemy
     public int GoldReward { get; set; }
     public int XPReward { get; set; }
 
+    int IAttacker.Strength => this.Strength;
+    int IDefender.AC => this.AC;
+    
     public Enemy(string name, int health, int strength, int ac, int goldReward, int xpReward)
     {
         Name = name;
